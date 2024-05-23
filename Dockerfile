@@ -19,5 +19,5 @@ RUN pip3 install -r /tmp/requirements.txt && rm -r /tmp/requirements.txt
 COPY . /code
 WORKDIR /code
 
-CMD ["bash"]
+CMD ["bash", "-u"]
 
