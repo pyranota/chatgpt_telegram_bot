@@ -38,7 +38,7 @@ class ChatGPT:
             "gpt-3.5-turbo",
             "gpt-4",
             "gpt-4-1106-preview",
-            "gpt-4-vision-preview",
+            "gpt-4o",
         }, f"Unknown model: {model}"
         self.model = model
 
@@ -55,7 +55,7 @@ class ChatGPT:
                     "gpt-3.5-turbo",
                     "gpt-4",
                     "gpt-4-1106-preview",
-                    "gpt-4-vision-preview",
+                    "gpt-4o",
                 }:
                     messages = self._generate_prompt_messages(
                         message, dialog_messages, chat_mode
@@ -210,7 +210,7 @@ class ChatGPT:
         answer = None
         while answer is None:
             try:
-                if self.model == "gpt-4-vision-preview":
+                if self.model == "gpt-4o":
                     messages = self._generate_prompt_messages(
                         message, dialog_messages, chat_mode, image_buffer
                     )
@@ -254,7 +254,7 @@ class ChatGPT:
         answer = None
         while answer is None:
             try:
-                if self.model == "gpt-4-vision-preview":
+                if self.model == "gpt-4o":
                     messages = self._generate_prompt_messages(
                         message, dialog_messages, chat_mode, image_buffer
                     )
@@ -379,7 +379,7 @@ class ChatGPT:
         elif model == "gpt-4-1106-preview":
             tokens_per_message = 3
             tokens_per_name = 1
-        elif model == "gpt-4-vision-preview":
+        elif model == "gpt-4o":
             tokens_per_message = 3
             tokens_per_name = 1
         else:
