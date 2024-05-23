@@ -118,7 +118,6 @@ class ChatGPT:
                     "gpt-3.5-turbo",
                     "gpt-4",
                     "gpt-4-1106-preview",
-                    "gpt-4o"
                 }:
                     messages = self._generate_prompt_messages(
                         message, dialog_messages, chat_mode
@@ -348,13 +347,8 @@ class ChatGPT:
                             "text": message,
                         },
                         {
-                            "type": "image_url",
-                            "image_url" : {
-                                
-                                "url": f"data:image/jpeg;base64,{self._encode_image(image_buffer)}",
-                                "detail":"high"
-                            }
-                            # "url" : "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Gfp-wisconsin-madison-the-nature-boardwalk.jpg/2560px-Gfp-wisconsin-madison-the-nature-boardwalk.jpg"""
+                            "type": "image",
+                            "image": self._encode_image(image_buffer),
                         },
                     ],
                 }
